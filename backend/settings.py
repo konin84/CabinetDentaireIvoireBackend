@@ -201,11 +201,10 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
 EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
-
 # DEFAULT_FROM_EMAIL = 'default from email'
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
-# CSRF_TRUSTED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    "http://uat.cabinet.works.go.ug",
+    "http://127.0.0.1:3000",
+]
