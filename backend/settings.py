@@ -11,10 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-q5p)*0jsv9=fo5*15nzc_7u(lzm3c4svdy@dg_uek%hc2l-01q'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-q5p)*0jsv9=fo5*15nzc_7u(lzm3c4svdy@dg_uek%hc2l-01q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['http://uat.cabinet.works.go.ug']
+ALLOWED_HOSTS = ['*']
+# ['http://uat.cabinet.works.go.ug', 'localhost:8000', '127.0.0.1:8000']
 
 
 # Application definition
@@ -193,16 +194,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_ALL_ORIGINS = True
 
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST', default='localhost')  # Here the host service provider
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Here the host service provider
+EMAIL_HOST_USER = 'dentaireivoirecabinet@gmail.com'
+EMAIL_HOST_PASSWORD = 'htnksrpfyykecsns'
 
-EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
-EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 # DEFAULT_FROM_EMAIL = 'default from email'
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+DEFAULT_FROM_EMAIL = 'default from email'
 
 CSRF_TRUSTED_ORIGINS = [
     "http://uat.cabinet.works.go.ug",
