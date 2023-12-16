@@ -28,7 +28,7 @@ class Treatment(models.Model):
   partpatient = models.PositiveIntegerField()
   partinsurance = models.PositiveIntegerField()
   updated_on = models.DateTimeField(auto_now=True)
-  registered_on = models.DateTimeField(auto_now_add=True)
+  registered_on = models.DateField(auto_now_add=True)
   class Meta:
         ordering = ['-registered_on']
 

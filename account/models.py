@@ -70,7 +70,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=20)
     lastname = models.CharField(max_length=50)
     patient_id = models.IntegerField(null=True, blank=True)
-    telephone = models.CharField(max_length=20, unique=True, blank=True, null=True)
+    telephone = models.CharField(max_length=20, blank=True, null=True)
     gender = models.CharField(max_length=15, choices=Gender.choices)
     # avatar = models.ImageField(null=True, default="images/avatar.svg", upload_to='images/users')
     createdon = models.DateTimeField(auto_now_add=True)

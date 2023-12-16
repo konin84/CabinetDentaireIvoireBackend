@@ -21,7 +21,7 @@ class PatientWithInsuranceSerializer(serializers.ModelSerializer):
 class PatientLimitedInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
-        fields = ['id', 'firstname', 'lastname', 'insurance']
+        fields = ['id', 'firstname', 'lastname', 'insurance', 'telephone']
 
 # The following codes are for the users to send messages to send messages
 class PatientMessageSerializer(serializers.ModelSerializer):

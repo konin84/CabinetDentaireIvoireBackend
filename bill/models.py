@@ -13,7 +13,7 @@ class Payment(models.Model):
   partpatient = models.IntegerField()
   amountpaid = models.IntegerField()
   updated_on = models.DateTimeField(auto_now=True)
-  registered_on = models.DateTimeField(auto_now_add=True)
+  registered_on = models.DateField(auto_now_add=True)
   class Meta:
         ordering = ['-registered_on']
 

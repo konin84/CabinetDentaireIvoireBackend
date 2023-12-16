@@ -28,7 +28,7 @@ def PatientSetting (request, pk):
    except Payment.DoesNotExist:
       return Response(status=status.HTTP_404_NOT_FOUND)
    if request.method=='GET':
-      serialiazer = PaymentSerializer(data)
+      serialiazer = PaymentInfoSerializer(data)
       return Response(serialiazer.data, status=status.HTTP_200_OK)
    elif request.method == 'DELETE':
       data.delete()
