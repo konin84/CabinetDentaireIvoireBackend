@@ -17,3 +17,26 @@ class Insurance(models.Model):
 
     def __str__(self):
         return self.insurancename
+
+
+class Insurance2(models.Model):
+    insurancename = models.CharField(max_length=300, unique=True, primary_key = True)
+    updated_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.insurancename
+class Insurance3(models.Model):
+    insurancename = models.CharField(max_length=300, unique=True, primary_key = True)
+    updated_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.insurancename
+

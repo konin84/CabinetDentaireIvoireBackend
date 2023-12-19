@@ -25,13 +25,15 @@ class Treatment(models.Model):
   statuspayment = models.CharField(max_length=100)
   interventions = models.TextField()
   treatmentamount = models.PositiveIntegerField()
-  partpatient = models.PositiveIntegerField()
-  partinsurance = models.PositiveIntegerField()
+  partpatient = models.IntegerField()
+  partinsurance = models.IntegerField()
+  partinsurance2 = models.IntegerField(null=True, blank=True)
+  partinsurance3 = models.IntegerField(null=True, blank=True)
   updated_on = models.DateTimeField(auto_now=True)
   registered_on = models.DateField(auto_now_add=True)
   class Meta:
         ordering = ['-registered_on']
 
   def __str__(self):
-        return f'{self.id} - {self.patient}'
+        return f'{self.id} - {"du patient"} {self.patient}'
 

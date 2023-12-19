@@ -6,18 +6,19 @@ from rest_framework import serializers
 
 
 class PaymentSerializer(serializers.ModelSerializer):
-    # patient = PatientLimitedInfoSerializer()
-    # user = FirstnameLastnameSerializer()
     class Meta:
         model = Payment
         fields = '__all__'
-        # exclude = ('patient','user',)
+
+class UpdatePaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = ['amountpaid']
 
 
 class PaymentInfoSerializer(serializers.ModelSerializer):
-    patient = PatientLimitedInfoSerializer()
+    # patient = PatientLimitedInfoSerializer()
     user = FirstnameLastnameSerializer()
     class Meta:
         model = Payment
         fields = '__all__'
-        # exclude = ('patient','user',)

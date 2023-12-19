@@ -1,4 +1,4 @@
-from .serializers import PaymentSerializer,PaymentInfoSerializer
+from .serializers import PaymentSerializer,PaymentInfoSerializer,UpdatePaymentSerializer
 from rest_framework.response import Response
 from rest_framework import  status
 from rest_framework.decorators import api_view, permission_classes, APIView
@@ -34,7 +34,7 @@ def PatientSetting (request, pk):
       data.delete()
       return Response(status=status.HTTP_200_OK) 
    elif request.method == 'PUT':
-      serialiazer = PaymentSerializer(data, data=request.data)
+      serialiazer = UpdatePaymentSerializer(data, data=request.data)
       if serialiazer.is_valid():
          serialiazer.save()
          return Response({'Payment': serialiazer.data}, status=status.HTTP_200_OK)
