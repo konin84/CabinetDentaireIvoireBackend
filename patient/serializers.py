@@ -5,7 +5,7 @@ from insurance.serializers import InsurancenameSerializer
 from account.serializers import AccountInfoForMessageSerializer
 
 class PatientSerializer(serializers.ModelSerializer):
-    # insurance =InsurancenameSerializer()
+
     class Meta:
         model = Patient
         fields = '__all__'

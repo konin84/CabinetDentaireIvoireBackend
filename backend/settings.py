@@ -208,4 +208,6 @@ DEFAULT_FROM_EMAIL = 'default from email'
 CSRF_TRUSTED_ORIGINS = [
     "http://uat.cabinet.works.go.ug",
     "http://127.0.0.1:3000",
+    "https://cabinetdentaireivoire.com",
+
 ]

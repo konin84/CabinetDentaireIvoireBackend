@@ -21,7 +21,7 @@ def PaymentData( request):
     return Response(serialiazer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated, IsAdminUser])
+@permission_classes([IsAuthenticated])
 def PatientSetting (request, pk):
    try:
       data = Payment.objects.get(id=pk)

@@ -35,7 +35,7 @@ def PublicInsuranceData(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated, IsAdminUser])
+@permission_classes([IsAuthenticated])
 def InsuranceSetting(request, pk):
     try:
         data = Insurance.objects.get(insurancename=pk)
@@ -59,11 +59,9 @@ def InsuranceSetting(request, pk):
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def insurance2Data(request):
-
     if request.method == 'GET':
         data = Insurance2.objects.all()
         serializer = Insurance2Serializer(data, many=True)
-
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     elif request.method == 'POST':
@@ -75,7 +73,7 @@ def insurance2Data(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated, IsAdminUser])
+@permission_classes([IsAuthenticated])
 def Insurance2Setting(request, pk):
     try:
         data = Insurance2.objects.get(insurancename=pk)

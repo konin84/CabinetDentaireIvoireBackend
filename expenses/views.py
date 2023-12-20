@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from .models import Expense, ExpenseTypes
 
 @api_view(['GET', 'POST'])
-# @permission_classes([IsAuthenticated, IsAdminUser])
+# @permission_classes([IsAuthenticated])
 def ExpenseTypeData(request):
     if request.method == 'GET':
         data = ExpenseTypes.objects.all()
@@ -21,7 +21,7 @@ def ExpenseTypeData(request):
         return Response(serialiazer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def ExpenseTypeSetting(request, pk):
     try:
         data = ExpenseTypes.objects.get(id=pk)
