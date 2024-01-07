@@ -1,7 +1,7 @@
 from .models import Payment
 from account.serializers import FirstnameLastnameSerializer
 from patient.serializers import PatientLimitedInfoSerializer
-
+from treatment.serializers import TreatmentInfoSerializer
 from rest_framework import serializers
 
 
@@ -17,7 +17,7 @@ class UpdatePaymentSerializer(serializers.ModelSerializer):
 
 
 class PaymentInfoSerializer(serializers.ModelSerializer):
-    # patient = PatientLimitedInfoSerializer()
+    treatment = TreatmentInfoSerializer()
     user = FirstnameLastnameSerializer()
     class Meta:
         model = Payment

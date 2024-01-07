@@ -10,8 +10,8 @@ urlpatterns = [
     path('update/<str:pk>', views.InsuranceSetting),
     path('insurance/insurance2', views.insurance2Data),
     path('insurance/insurance2/<str:pk>', views.Insurance2Setting),
-    path('insurance/insurance3', views.insurance3Data),
-    path('insurance/insurance3/<str:pk>', views.Insurance3Setting),
+    # path('insurance/insurance3', views.insurance3Data),
+    # path('insurance/insurance3/<str:pk>', views.Insurance3Setting),
     # path('company/logo/<str:pk>', views.companyLogoSetting),
     # path('company/logo/update/<str:pk>', views.companyLogoSetting),
 

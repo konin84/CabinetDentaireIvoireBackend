@@ -11,7 +11,7 @@ class Payment(models.Model):
   treatmentamount = models.IntegerField(null=True, blank=True)
   partinsurance = models.IntegerField()
   partinsurance2 = models.IntegerField(null=True, blank=True)
-  partinsurance3 = models.IntegerField(null=True, blank=True)
+  # partinsurance3 = models.IntegerField(null=True, blank=True)
   partpatient = models.IntegerField()
   amountpaid = models.IntegerField()
   updated_on = models.DateTimeField(auto_now=True)

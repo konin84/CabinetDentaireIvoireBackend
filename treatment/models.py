@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from account.models import UserAccount
 from patient.models import Patient
+from insurance.models import Insurance, Insurance2
 
 
 class Intervention(models.Model):
@@ -26,9 +27,11 @@ class Treatment(models.Model):
   interventions = models.TextField()
   treatmentamount = models.PositiveIntegerField()
   partpatient = models.IntegerField()
+  insurance = models.ForeignKey(Insurance, on_delete=models.DO_NOTHING, null=True, blank=True)
+  insurance2 = models.ForeignKey(Insurance2, on_delete=models.DO_NOTHING, null=True, blank=True)
   partinsurance = models.IntegerField()
   partinsurance2 = models.IntegerField(null=True, blank=True)
-  partinsurance3 = models.IntegerField(null=True, blank=True)
+  prescription = models.TextField(null=True, blank=True)
   updated_on = models.DateTimeField(auto_now=True)
   registered_on = models.DateField(auto_now_add=True)
   class Meta:
